@@ -13,10 +13,10 @@ var app = express();
 let mysql = require('mysql');
 
 let connection = mysql.createConnection({
-  host     : 'r4919aobtbi97j46.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-  user     : 'zdcma94va8d2tju4',
-  password : 'ppgo1jy12365hkbj',
-  database : 't2al6eofj951eq4b'
+  host     : 'lg7j30weuqckmw07.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  user     : 'kc5hljv80epbpac2',
+  password : 'qx06sa37gcl79jh9',
+  database : 'gf7babag5kx72svb'
 });
 
 
