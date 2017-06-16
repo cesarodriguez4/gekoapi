@@ -11,6 +11,23 @@ var users = require('./routes/users');
 var cors = require('cors');
 var app = express();
 let mysql = require('mysql');
+var nodemailer = require('nodemailer');
+
+let transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'soporteagronacional@gmail.com',
+    pass: 'agronacionaldelcentro'
+  }
+});
+
+transporter.verify( (error, success) => {
+   if (error) {
+        console.log(error);
+   } else {
+        console.log('Server is ready to take our messages');
+   }
+});
 
 let connection = mysql.createConnection({
   host     : 'lg7j30weuqckmw07.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
