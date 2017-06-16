@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodejs ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "auto": "git add . && git commit -am '.' && git push origin master"
   },
   "dependencies": {
     "body-parser": "~1.0.0",
