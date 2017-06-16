@@ -18,7 +18,7 @@ let transporter = nodemailer.createTransport({
   port: 465,
     secure: true,
     auth: {
-        user: 'ventas1@gekosupplies.com',
+        user: 'ventas@gekosupplies.com',
         pass: 'GekoSuppliesLLC'
     }
 });
