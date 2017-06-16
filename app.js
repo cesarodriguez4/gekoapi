@@ -13,25 +13,6 @@ var app = express();
 let mysql = require('mysql');
 const nodemailer = require('nodemailer');
 
-let transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com', 
-  port: 465,
-    secure: true,
-    auth: {
-        user: 'ventas@gekosupplies.com',
-        pass: 'GekoSuppliesLLC'
-    }
-});
-
-transporter.verify(function(error, success) {
-   if (error) {
-        console.log(error);
-   } else {
-        console.log('Servidor listo para enviar correos electronicos');
-   }
-});
-
-
 let connection = mysql.createConnection({
   host     : 'lg7j30weuqckmw07.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
   user     : 'kc5hljv80epbpac2',
