@@ -1,2 +1,0 @@
-# gekoapi
-Api para gekosupplies
