@@ -11,12 +11,33 @@ var users = require('./routes/users');
 var cors = require('cors');
 var app = express();
 let mysql = require('mysql');
+const nodemailer = require('nodemailer');
+
+let transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com', 
+  port: 465,
+    secure: false,
+    tls: { rejectUnauthorized: false },
+    auth: {
+        user: 'ventas1@gekosupplies.com',
+        pass: 'GekoSuppliesLLC'
+    }
+});
+
+transporter.verify(function(error, success) {
+   if (error) {
+        console.log(error);
+   } else {
+        console.log('Servidor listo para enviar correos electronicos');
+   }
+});
+
 
 let connection = mysql.createConnection({
-  host     : 'r4919aobtbi97j46.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-  user     : 'zdcma94va8d2tju4',
-  password : 'ppgo1jy12365hkbj',
-  database : 't2al6eofj951eq4b'
+  host     : 'lg7j30weuqckmw07.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  user     : 'kc5hljv80epbpac2',
+  password : 'qx06sa37gcl79jh9',
+  database : 'gf7babag5kx72svb'
 });
 
 
