@@ -13,7 +13,7 @@ var app = express();
 let mysql = require('mysql');
 var nodemailer = require('nodemailer');
 
-let transporter = nodemailer.createTransport({
+/*let transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
     port: 465,
     secure: true, // use SSL
@@ -21,7 +21,16 @@ let transporter = nodemailer.createTransport({
         user: 'arosales@gekosupplies.com',
         pass: 'GekoSuppliesLLC'
     }
+});*/
+
+let transporter = nodemailer.createTransport({
+    service: 'Gmail'
+    auth: {
+        user: 'arosales@gekosupplies.com',
+        pass: 'GekoSuppliesLLC'
+    }
 });
+
 
 transporter.verify( (error, success) => {
    if (error) {
