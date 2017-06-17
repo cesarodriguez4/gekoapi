@@ -3,7 +3,7 @@ let crud = new sql('mysql');
 let random = require('randomstring');
 module.exports = (app, con) => {
 	app.post('/query', (req, res) => {
-		req.body.ticket = random.generate(6).toUpperCase();
+		req.body.ticket = random.generate(10).toUpperCase();
 		crud.insert(con, {
 			insertInto: 'CONSULTAS',
 			values: req.body
