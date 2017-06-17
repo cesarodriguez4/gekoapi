@@ -6,7 +6,7 @@ module.exports = (app, con, transporter) => {
 		req.body.ticket = random.generate(10).toUpperCase();
 		let opciones = {
 		  from: '"Ventas" <ventas1@gekosupplies.com>', // sender address
-		  to: req.body.email,
+		  to: req.body.correo,
 		  subject: `Tu consulta se ha creado correctamente`,
 		  html: 
 		   `<img style="margin-left: 40%" width="250" height="100" src="https://pbs.twimg.com/media/DCf4MEIWAAA0SfB.png">
@@ -26,7 +26,7 @@ module.exports = (app, con, transporter) => {
 		}
 	     console.log('Correo %s enviado: %s', info.messageId, info.response);
 		});
-		
+
 		crud.insert(con, {
 			insertInto: 'CONSULTAS',
 			values: req.body
