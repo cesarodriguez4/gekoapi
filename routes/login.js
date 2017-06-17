@@ -2,14 +2,12 @@ const sql = require('sql-crud');
 let crud = new sql('mysql');
 module.exports = (app, con) => {
 	app.post('/login', (req, res) => {
-		console.log('culooo');
-		const usuario = req.body.usuario;
+		const correo = req.body.correo;
 		const password = req.body.password;
-		console.log(usuario);
 		crud.select(con, {
 			select: '*',
-			from: 'USUARIOS',
-			where: {usuario, password}
+			from: 'ADMINISTRADORES',
+			where: {correo, password}
 		}, (error, result) => {
 			if (error) {
 				res.send(error);
@@ -17,7 +15,7 @@ module.exports = (app, con) => {
 			if (result.length > 0 ) {
 				res.send({success: true});
 			}
-			res.send({error: 'No existe el usuario'});
+			res.send({error: 'Este usuario no existe.'});
 		}, true);
 	});
 }
