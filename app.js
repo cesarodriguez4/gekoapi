@@ -24,10 +24,10 @@ var nodemailer = require('nodemailer');
 });*/
 
 let transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    service: 'Hotmail',
     auth: {
-        user: 'ventas1@gekosupplies.com',
-        pass: 'GekoSuppliesLLC'
+        user: 'cesarodriguez4@hotmail.com',
+        pass: 'cesar25063730'
     }
 });
 
