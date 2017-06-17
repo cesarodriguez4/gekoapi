@@ -24,7 +24,7 @@ var nodemailer = require('nodemailer');
 });*/
 
 let transporter = nodemailer.createTransport({
-    service: 'Gmail'
+    service: 'Gmail',
     auth: {
         user: 'arosales@gekosupplies.com',
         pass: 'GekoSuppliesLLC'
