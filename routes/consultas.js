@@ -9,14 +9,14 @@ module.exports = (app, con, transporter) => {
 		  to: req.body.correo,
 		  subject: `Tu consulta se ha creado correctamente`,
 		  html: 
-		   `<img style="margin-left: 40%" width="250" height="100" src="https://pbs.twimg.com/media/DCf4MEIWAAA0SfB.png">
-		    <h1 style="background-color: #001357;color: white;font-family: arial;
+		   `<img style="margin-left: 30%" width="250" height="100" src="https://pbs.twimg.com/media/DCf4MEIWAAA0SfB.png">
+		    <h1 style="text-align: center; background-color: #1C2331;color: white;font-family: arial;
 		    padding: 2em;"">
 		      Tu consulta está siendo procesada.
 		    </h1>
-		    <p>El ticket asignado a tu caso es: ${req.body.ticket}</p>
+		    <p>El ticket asignado a tu caso es: <strong>${req.body.ticket}</strong></p>
 		    <p>Tan pronto como tengamos una respuesta a tu consulta
-		    te lo comunicaremos por esta vía</p>
+		    te lo comunicaremos por esta vía.</p>
 		    <p>Gekosupplies LLC</p>
 		    `
 		};
