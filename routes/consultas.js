@@ -7,7 +7,7 @@ module.exports = (app, con) => {
 			values: req.body
 		}, (err, result) => {
 			if (err) {
-				res.send(error);
+				res.send(err);
 			}
 			res.send(result);
 		}, true);
