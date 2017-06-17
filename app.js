@@ -14,11 +14,13 @@ let mysql = require('mysql');
 var nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'soporteagronacional@gmail.com',
-    pass: 'agronacionaldelcentro'
-  }
+  host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // use SSL
+    auth: {
+        user: 'ventas1@gekosupplies.com',
+        pass: 'GekoSuppliesLLC'
+    }
 });
 
 transporter.verify( (error, success) => {
