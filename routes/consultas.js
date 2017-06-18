@@ -37,4 +37,16 @@ module.exports = (app, con, transporter) => {
 			res.send(result);
 		}, true);
 	});
+
+	app.get('/query', (req, res) => {
+      crud.select(con, {
+      	select: '*',
+      	from: 'CONSULTAS' 
+      }, (error, result) => {
+        if (error) {
+        	res.send(error);
+        }
+        res.send(result);
+      });
+	});
 }
