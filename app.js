@@ -20,6 +20,10 @@ let transporter = nodemailer.createTransport({
     auth: {
         user: 'arosales@gekosupplies.com',
         pass: 'GekoSuppliesLLC'
+    },
+    tls: {
+    // do not fail on invalid certs
+    rejectUnauthorized: false
     }
 });
 
