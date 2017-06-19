@@ -19,7 +19,7 @@ let transporter = nodemailer.createTransport({
     secure: false, // use SSL
     auth: {
         user: 'arosales@gekosupplies.com',
-        pass: 'GekoSuppliesLLC'
+        pass: 'utorxpwymxkczafh'
     }
 });
 
