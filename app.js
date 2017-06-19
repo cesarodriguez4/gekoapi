@@ -15,7 +15,7 @@ var nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
-    port: 465,
+    port: 587,
     secure: true, // use SSL
     auth: {
         user: 'arosales@gekosupplies.com',
