@@ -13,23 +13,23 @@ var app = express();
 let mysql = require('mysql');
 var nodemailer = require('nodemailer');
 
-/*let transporter = nodemailer.createTransport({
+let transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
     port: 465,
     secure: true, // use SSL
     auth: {
-        user: 'arosales@gekosupplies.com',
+        user: 'ventas1@gekosupplies.com',
         pass: 'GekoSuppliesLLC'
     }
-});*/
+});
 
-let transporter = nodemailer.createTransport({
+/*let transporter = nodemailer.createTransport({
     service: 'Hotmail',
     auth: {
         user: 'cesarodriguez4@hotmail.com',
         pass: 'cesar25063730'
     }
-});
+});*/
 
 
 transporter.verify( (error, success) => {
