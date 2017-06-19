@@ -15,11 +15,11 @@ var nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
-    port: 587,
-    secure: false, // use SSL
+    port: 465,
+    secure: true, // use SSL
     auth: {
         user: 'arosales@gekosupplies.com',
-        pass: 'utorxpwymxkczafh'
+        pass: 'GekoSuppliesLLC'
     }
 });
 
