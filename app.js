@@ -14,18 +14,20 @@ let mysql = require('mysql');
 var nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
+    host: 'smtp.gmail.com',
     port: 465,
-    secure: true, // use SSL
+    secure: true,
     auth: {
+        type: 'OAuth2',
         user: 'arosales@gekosupplies.com',
-        pass: 'GekoSuppliesLLC'
-    },
-    tls: {
-    // do not fail on invalid certs
-    rejectUnauthorized: false
+        clientId: '854827283244-4jkmfri4ac92aphjplckkqlnve5ubvgi.apps.googleusercontent.com',
+        clientSecret: '65EsASGClRQbfGSrbD7eAsJN',
+        refreshToken: '1/TBFI1YLSyUG2cloH75lDuvQY7OgwYkaA3rrRzUOTSQQ',
+        accessToken: 'ya29.GltvBERjnsSBgNd_yy7KbrbV9SkAvxwcOmzYWDFVfrV4kqTl8BKEEAZPbxkaOTRHdKpsQchY07F9uFoqw0jGrXj8K4qzYt6opN35Fkpi4gy_9dx1eFWYWi0DzgfI',
+        expires: 3600
     }
 });
+
 
 /*let transporter = nodemailer.createTransport({
     service: 'Hotmail',
