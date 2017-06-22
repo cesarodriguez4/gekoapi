@@ -2,6 +2,7 @@ const sql = require('sql-crud');
 let crud = new sql('mysql');
 let random = require('randomstring');
 module.exports = (app, con, transporter) => {
+	
 	app.get('/messages/:ticket', (req, res) => {
       const ticket = req.params.ticket;
       crud.select(con, {
@@ -15,4 +16,5 @@ module.exports = (app, con, transporter) => {
       	res.send(result);
       }, true);
 	});
+	
 };
