@@ -17,7 +17,7 @@ module.exports = (app, con, transporter) => {
       }, true);
 	});
 
-	app.delete('/users/delete/:ticket', (req, res) => {
+	app.get('/users/delete/:ticket', (req, res) => {
       const ticket = req.params.ticket;
       console.log(req.body);
       crud.delete(con, {
