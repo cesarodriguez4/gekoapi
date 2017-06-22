@@ -16,5 +16,18 @@ module.exports = (app, con, transporter) => {
       	res.send(result);
       }, true);
 	});
-	
+
+	app.delete('/users/delete', (req, res) => {
+      const ticket = req.body.ticket;
+      crud.delete(con, {
+      	from: 'CONSULTAS',
+      	where: {ticket}
+      }, 0, 1);
+      crud.delete(con, {
+      	from: 'MENSAJES',
+      	where: {ticket}
+      }, 0, 1);
+      res.send(200);
+	});
+
 };
