@@ -19,6 +19,7 @@ module.exports = (app, con, transporter) => {
 
 	app.delete('/users/delete', (req, res) => {
       const ticket = req.body.ticket;
+      console.log(req.body);
       crud.delete(con, {
       	from: 'CONSULTAS',
       	where: {ticket}
