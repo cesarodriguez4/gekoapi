@@ -90,6 +90,7 @@ app.use('/', routes);
 app.use('/users', users);
 require('./routes/login')(app, connection);
 require('./routes/consultas')(app, connection, transporter);
+require('./routes/mensajes')(app, connection, transporter);
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
