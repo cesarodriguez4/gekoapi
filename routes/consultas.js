@@ -124,6 +124,7 @@ module.exports = (app, con, transporter) => {
 		    </h1>
 		    <p>Ticket #: <strong>${req.body.ticket}</strong></p>
 		    <p>Mensaje: ${req.body.mensaje}.</p>
+		    <p>Puedes responder a este mensaje siguiento el siguiente <a href="www.gekosupplies.com/consulta/ticket">Enlace</a></p>
 		    <small>Tip: Puedes ver el historial de conversacion y/o el estado de tu pedido visitando www.gekosupplies.com/consulta/ticket</small>
 		    <p>Gekosupplies LLC</p>
 		    `
