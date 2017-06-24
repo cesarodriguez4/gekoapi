@@ -110,6 +110,30 @@ module.exports = (app, con, transporter) => {
       	  fecha: req.body.fecha
       	}
       }, false, true);
+
+      let mensaje = {
+		  from: '"Ventas" <ventas1@gekosupplies.com>', // sender address
+		  to: req.body.correo,
+		  subject: `Mensaje de Gekosupplies LLC`,
+		  html: 
+		   `<img style="margin-left: 30%" width="250" height="100" src="https://pbs.twimg.com/media/DCf4MEIWAAA0SfB.png">
+		    <h1 style="text-align: center; background-color: #5b6b8a;color: white;font-family: arial;
+		    padding: 0.5em;border-radius:10px;">
+		      Has recibido un nuevo mensaje.
+		    </h1>
+		    <p>Ticket #: <strong>${req.body.ticket}</strong></p>
+		    <p>Mensaje: ${req.body.mensaje}.</p>
+		    <small>Tip: Puedes ver el historial de conversacion y/o el estado de tu pedido visitando www.gekosupplies.com/consulta/ticket</small>
+		    <p>Gekosupplies LLC</p>
+		    `
+		};
+
+		transporter.sendMail(mensaje, (error, info) => {
+	    if (error) {
+		   return console.log(error);
+		}
+	     console.log('Correo %s enviado: %s', info.messageId, info.response);
+		});
       res.send(200);
 	});
 }
