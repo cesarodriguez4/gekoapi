@@ -10,8 +10,8 @@ module.exports = (app, con, transporter) => {
 		  subject: `Tu consulta se ha creado correctamente`,
 		  html: 
 		   `<img style="margin-left: 30%" width="250" height="100" src="https://pbs.twimg.com/media/DCf4MEIWAAA0SfB.png">
-		    <h1 style="text-align: center; background-color: #1C2331;color: white;font-family: arial;
-		    padding: 2em;"">
+		    <h1 style="text-align: center; background-color: #5b6b8a;color: white;font-family: arial;
+		    padding: 0.5em;border-radius:10px;">
 		      Tu consulta está siendo procesada.
 		    </h1>
 		    <p>El ticket asignado a tu caso es: <strong>${req.body.ticket}</strong></p>
@@ -27,8 +27,8 @@ module.exports = (app, con, transporter) => {
 		  subject: `¡Un cliente nuevo ha hecho una consulta!`,
 		  html: 
 		   `<img style="margin-left: 30%" width="250" height="100" src="https://pbs.twimg.com/media/DCf4MEIWAAA0SfB.png">
-		    <h1 style="text-align: center; background-color: #1C2331;color: white;font-family: arial;
-		    padding: 1em;"">
+		    <h1 style="text-align: center; background-color: #5b6b8a;color: white;font-family: arial;
+		    padding: 0.5em;border-radius:10px;">
 		      El ticket del cliente: <strong>${req.body.ticket}</strong>.
 		    </h1>
 		    <p>Acá los datos de su consulta:</p>
@@ -43,7 +43,7 @@ module.exports = (app, con, transporter) => {
 		    	<tbody>
 		    		<tr>
 		    			<td>${req.body.nombre}</td>
-		    			<td>${req.body.email}</td>
+		    			<td>${req.body.correo}</td>
 		    			<td>${req.body.motivo}</td>
 		    			<td>${req.body.consulta}</td>
 		    			<td>${req.body.pais}</td>
