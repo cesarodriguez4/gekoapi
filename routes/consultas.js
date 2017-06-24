@@ -107,7 +107,8 @@ module.exports = (app, con, transporter) => {
       	values: {
       	  mensaje: req.body.mensaje,
       	  ticket: req.body.ticket,
-      	  fecha: req.body.fecha
+      	  fecha: req.body.fecha,
+      	  envia: 1
       	}
       }, false, true);
 
