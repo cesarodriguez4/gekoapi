@@ -100,4 +100,16 @@ module.exports = (app, con, transporter) => {
         res.send(result);
       });
 	});
+
+	app.post('/query/answer', (req, res) => {
+      crud.insert(con, {
+      	insertInto: 'MENSAJES',
+      	values: {
+      	  mensaje: req.body.mensaje,
+      	  ticket: req.body.ticket,
+      	  fecha: req.body.fecha
+      	}
+      }, false, true);
+      res.send(200);
+	});
 }
