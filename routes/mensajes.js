@@ -5,7 +5,8 @@ module.exports = (app, con, transporter) => {
 	
 app.get('/messages/:ticket', (req, res) => {
   const ticket = req.params.ticket;
-  const query = `SELECT * FROM MENSAJES INNER JOIN CONSULTAS ON MENSAJES.ticket = CONSULTAS.ticket WHERE ticket = ${ticket};`;
+  const query = `SELECT * FROM MENSAJES INNER JOIN CONSULTAS ON MENSAJES.ticket = CONSULTAS.ticket WHERE MENSAJES.ticket = '${ticket}';
+`;
   console.log(query);
   con.query(query, (err, response) => {
   if (err) {
