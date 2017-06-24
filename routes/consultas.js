@@ -56,7 +56,6 @@ module.exports = (app, con, transporter) => {
 		    `
 		};
 
-
         transporter.sendMail(opciones, (error, info) => {
 	    if (error) {
 		   return console.log(error);
