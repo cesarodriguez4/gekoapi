@@ -147,4 +147,18 @@ module.exports = (app, con, transporter) => {
 		}, false, true);
 		res.send(200);
 	});
+
+	app.get('/ticket/:ticket', (req, res) => {
+      const ticket = req.params.ticket;
+      crud.select(con, {
+      	select: '*',
+      	from: 'CONSULTAS',
+      	where: {ticket}
+      }, (err, result) => {
+        if (err) {
+        	res.send(err);
+        }
+        res.send(result);
+      }, true);
+	});
 }
