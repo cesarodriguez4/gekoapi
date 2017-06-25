@@ -138,4 +138,13 @@ module.exports = (app, con, transporter) => {
 		});
       res.send(200);
 	});
+
+	app.put('/query/state', (req, res) => {
+		crud.update(con, {
+			table: 'CONSULTAS',
+			values: req.body,
+			where: {ticket: req.body.ticket}
+		}, false, true);
+		res.send(200);
+	});
 }
