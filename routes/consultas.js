@@ -139,6 +139,45 @@ module.exports = (app, con, transporter) => {
       res.send(200);
 	});
 
+
+    app.post('/query/answer/client', (req, res) => {
+      crud.insert(con, {
+      	insertInto: 'MENSAJES',
+      	values: {
+      	  mensaje: req.body.mensaje,
+      	  ticket: req.body.ticket,
+      	  fecha: req.body.fecha,
+      	  envia: 0
+      	}
+      }, false, true);
+
+      let mensaje = {
+		  from: '"Ventas" <ventas1@gekosupplies.com>', // sender address
+		  to: 'ventas1@gekosupplies.com',
+		  subject: `Nueva respuesta de cliente`,
+		  html: 
+		   `<img style="margin-left: 30%" width="250" height="100" src="https://pbs.twimg.com/media/DCf4MEIWAAA0SfB.png">
+		    <h1 style="text-align: center; background-color: #5b6b8a;color: white;font-family: arial;
+		    padding: 0.5em;border-radius:10px;">
+		      Un cliente te ha respondido.
+		    </h1>
+		    <p>Ticket #: <strong>${req.body.ticket}</strong></p>
+		    <p>Mensaje: ${req.body.mensaje}.</p>
+		    <p>Puedes acceder a más detalles y opciones iniciando sesión como administrador en www.gekosupplies.com</p>
+		    <small>Tip: Si usas la página para responder a tus clientes podrás manejar el historial de una manera más organizada.</small>
+		    <p>Gekosupplies LLC</p>
+		    `
+		};
+
+		transporter.sendMail(mensaje, (error, info) => {
+	    if (error) {
+		   return console.log(error);
+		}
+	     console.log('Correo %s enviado: %s', info.messageId, info.response);
+		});
+      res.send(200);
+	});
+
 	app.put('/query/state', (req, res) => {
 		crud.update(con, {
 			table: 'CONSULTAS',
