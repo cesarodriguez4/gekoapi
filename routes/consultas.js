@@ -169,7 +169,30 @@ module.exports = (app, con, transporter) => {
 		    `
 		};
 
+		let auto = {
+		  from: '"Ventas" <ventas1@gekosupplies.com>', // sender address
+		  to: req.body.correo,
+		  subject: `Tu mensaje se ha enviado correctamente`,
+		  html: 
+		   `<img style="margin-left: 30%" width="250" height="100" src="https://pbs.twimg.com/media/DCf4MEIWAAA0SfB.png">
+		    <h1 style="text-align: center; background-color: #5b6b8a;color: white;font-family: arial;
+		    padding: 0.5em;border-radius:10px;">
+		      Tu mensaje se ha enviado correctamente.
+		    </h1>
+		    <p>Tan pronto como tengamos una respuesta a tu mensaje
+		    te lo comunicaremos por esta vía.</p>
+		    <p>Gekosupplies LLC</p>
+		    `
+		};
+
 		transporter.sendMail(mensaje, (error, info) => {
+	    if (error) {
+		   return console.log(error);
+		}
+	     console.log('Correo %s enviado: %s', info.messageId, info.response);
+		});
+
+		transporter.sendMail(auto, (error, info) => {
 	    if (error) {
 		   return console.log(error);
 		}
